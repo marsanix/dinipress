@@ -116,3 +116,13 @@ body {
 .sidebar-module-inset ol:last-child {
   margin-bottom: 0;
 }
+
+.jumbotron.page-header {
+  padding: 2.5rem;
+  text-align: center;
+}
+
+@media (min-width: 576px) {
+.jumbotron.page-header {
+    padding: 2.5rem;
+}
