@@ -20,7 +20,21 @@ if (is_sticky() && is_home()):
 	echo dinipress_get_svg(array('icon' => 'thumb-tack'));
 endif;
 ?>
-	<header class="entry-header">
+
+	<div class="row">
+
+		<div class="col-6">
+			<?php if ('' !== get_the_post_thumbnail() && !is_single()): ?>
+				<div class="post-thumbnail">
+					<a href="<?php the_permalink();?>">
+						<?php the_post_thumbnail('dinipress-featured-image');?>
+					</a>
+				</div><!-- .post-thumbnail -->
+			<?php endif;?>
+		</div>
+		<div class="col-6">
+
+			<header class="entry-header">
 
 	<?php
 
@@ -47,14 +61,6 @@ the_author()?></span>
 
 	<section class="entry-content">
 
-	<?php if ('' !== get_the_post_thumbnail() && !is_single()): ?>
-		<div class="post-thumbnail">
-			<a href="<?php the_permalink();?>">
-				<?php the_post_thumbnail('dinipress-featured-image');?>
-			</a>
-		</div><!-- .post-thumbnail -->
-	<?php endif;?>
-
 		<?php
 /* translators: %s: Name of current post */
 the_content(sprintf(
@@ -71,7 +77,7 @@ wp_link_pages(array(
 ?>
 	</section>
 
-	<footer>
+<!-- 	<footer>
       <p class="text-muted" style="margin-bottom: 20px;">
         <i class="fa fa-folder-open-o"></i>&nbsp;
         <?php _e('Category', 'dinipress');?>:
@@ -88,7 +94,9 @@ if (is_single()) {
 }
 ?>
 
-    </footer>
+    		</footer> -->
+    	</div>
+	</div>
 
 </article><!-- #post-## -->
 

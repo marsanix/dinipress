@@ -187,3 +187,21 @@ h2.entry-title a, h2.entry-title a:hover {
 #comments ul.media-list li.media .media-left {
   margin-right: 10px;
 }
+
+img.size-dinipress-featured-image {
+  width: 365px;
+  height: auto;
+  padding: 27px 10px 10px 0px;
+}
+
+img.size-dinipress-single-image {
+  width: 720px;
+  height: auto;
+  padding: 0px 10px 10px 0px;
+}
+
+h2.entry-title {
+  font-size: 23px;
+  line-height: 1.2;
+  margin-bottom: 5px;
+}
