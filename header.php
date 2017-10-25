@@ -40,8 +40,9 @@ if (is_singular() && get_option('thread_comments')) {
   <body>
 
     <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#"><?php bloginfo('name');?></a>
+      <!-- <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"> -->
+      <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="<?php echo home_url('/'); ?>"><?php bloginfo('name');?></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -50,13 +51,12 @@ if (is_singular() && get_option('thread_comments')) {
 wp_nav_menu(array(
 	'menu' => 'primary',
 	'theme_location' => 'primary',
-	'depth' => 2,
+	'depth' => 5,
 	'container' => false,
-	//'container_class' => 'collapse navbar-collapse',
-	//'container_id' => 'navbarCollapse',
 	'menu_class' => 'nav navbar-nav mr-auto',
 	'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
-	'walker' => new WP_Bootstrap_Navwalker())
+	'walker' => new WP_Bootstrap_Navwalker(),
+)
 );
 ?>
           <!-- <ul class="navbar-nav mr-auto">
@@ -70,9 +70,10 @@ wp_nav_menu(array(
               <a class="nav-link disabled" href="#">Disabled</a>
             </li>
           </ul> -->
-          <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <?php // get_search_form();?>
+          <form action="<?php echo home_url('/'); ?>" role="search" method="get" id="searchform" class="searchform form-inline mt-2 mt-md-0">
+            <input class="form-control mr-sm-2" type="text" name="s" placeholder="Search" aria-label="Search">
+            <button id="searchsubmit" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           </form>
         </div>
       </nav>

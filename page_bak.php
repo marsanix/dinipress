@@ -8,14 +8,13 @@ echo '<h1>' . $this_item->title . '</h1>';
 ?>
 </div>
 
-<div class="container">
-  <div class="row">
 
-    <div class="<?php if (is_active_sidebar('sidebar-widget-area')): ?>col-sm-8<?php else: ?>col-sm-12<?php endif;?>">
-      <div id="content" role="main">
+<div class="container marketing">
+	<div class="row">
 
+	    <div class="col-sm-8 blog-main">
 
-		<?php
+					<?php
 while (have_posts()): the_post();
 
 	get_template_part('templates/page/content', 'page');
@@ -28,14 +27,12 @@ while (have_posts()): the_post();
 endwhile; // End of the loop.
 ?>
 
-      </div><!-- /#content -->
-    </div>
+</div>
 
-    <div class="col-sm-4" id="sidebar" role="navigation">
-       <?php get_sidebar();?>
-    </div>
+		<?php get_sidebar()?>
 
-  </div><!-- /.row -->
-</div><!-- /.container -->
+	</div>
+</div>
+
 
 <?php get_footer();?>

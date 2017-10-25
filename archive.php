@@ -1,20 +1,19 @@
 <?php get_header();?>
 
-<?php // if (have_posts()): ?>
-	<header class="jumbotron page-header" style="text-align: center;">
+<header class="jumbotron page-header" style="text-align: center;">
 		<?php
 the_archive_title('<h1 class="page-title">', '</h1>');
 the_archive_description('<div class="taxonomy-description">', '</div>');
 ?>
-	</header><!-- .page-header -->
-<?php // endif;?>
+</header>
 
-<div class="container marketing">
-	<div class="row">
+<div class="container">
+  <div class="row">
 
-	    <div class="col-sm-8 blog-main">
+    <div class="<?php if (is_active_sidebar('sidebar-widget-area')): ?>col-sm-8<?php else: ?>col-sm-12<?php endif;?>">
+      <div id="content" role="main">
 
-		<?php
+      	<?php
 if (have_posts()): ?>
 			<?php
 /* Start the Loop */
@@ -41,13 +40,14 @@ else:
 
 endif;?>
 
-		</div>
+      </div><!-- /#content -->
+    </div>
 
-		<?php get_sidebar()?>
+    <div class="col-sm-4" id="sidebar" role="navigation">
+       <?php get_sidebar();?>
+    </div>
 
-	</div>
-</div>
+  </div><!-- /.row -->
+</div><!-- /.container -->
 
-
-
-<?php get_footer();
+<?php get_footer();?>

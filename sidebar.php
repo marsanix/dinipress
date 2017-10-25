@@ -1,7 +1,9 @@
-<div class="col-12 col-md-3 sidebar-offcanvas">
 
   <aside class="ml-sm-auto blog-sidebar">
-    <div class="sidebar-module sidebar-module-inset">
+
+    <?php dynamic_sidebar('sidebar-widget-area');?>
+
+    <!-- <div class="sidebar-module sidebar-module-inset">
       <h4>About</h4>
       <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
     </div>
@@ -29,7 +31,5 @@
         <li><a href="#">Twitter</a></li>
         <li><a href="#">Facebook</a></li>
       </ol>
-    </div>
+    </div> -->
   </aside><!-- /.blog-sidebar -->
-
-</div>
