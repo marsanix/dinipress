@@ -32,7 +32,7 @@ body {
 
 /* Declare heights because of positioning of img element */
 .carousel-item {
-  height: 32rem;
+  height: 20rem;
   background-color: #777;
 }
 .carousel-item > img {
@@ -125,4 +125,11 @@ body {
 @media (min-width: 576px) {
 .jumbotron.page-header {
     padding: 2.5rem;
+}
+
+h2.entry-title a, h2.entry-title a:hover {
+  color: inherit;
+}
+.entry-meta a, .entry-meta a:hover {
+  color: inherit;
 }

@@ -15,6 +15,9 @@
     <!-- Bootstrap core CSS -->
     <link href="<?php echo get_bloginfo('template_directory'); ?>/assets/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Font awasome icon -->
+    <link rel="stylesheet" href="<?php echo get_bloginfo('template_directory'); ?>/assets/font-awesome/css/font-awesome.min.css">
+
     <!-- Custom styles for this template -->
     <link href="<?php bloginfo('stylesheet_url');?>" rel="stylesheet">
 
@@ -38,7 +41,7 @@ if (is_singular() && get_option('thread_comments')) {
 
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#">Carousel</a>
+        <a class="navbar-brand" href="#"><?php bloginfo('name');?></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>

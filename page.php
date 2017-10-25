@@ -9,6 +9,11 @@ echo '<h1>' . $this_item->title . '</h1>';
 </div>
 
 
+<div class="container marketing">
+	<div class="row">
+
+	    <div class="col-sm-8 blog-main">
+
 					<?php
 while (have_posts()): the_post();
 
@@ -22,6 +27,12 @@ while (have_posts()): the_post();
 endwhile; // End of the loop.
 ?>
 
-
 </div>
+
+		<?php get_sidebar()?>
+
+	</div>
+</div>
+
+
 <?php get_footer();?>
