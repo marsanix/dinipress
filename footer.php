@@ -1,7 +1,19 @@
       <!-- FOOTER -->
+
+      <hr class="featurette-divider">
+
       <footer class="container">
-        <p class="float-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2017 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+
+        <div class="row">
+            <?php dynamic_sidebar('footer-widget-area'); ?>
+        </div>
+
+        <div class="row footer">
+            <div class="col">
+                <p class="float-right"><a href="#">Back to top</a></p>
+                <p>&copy; 2017 Dinipress, all right reserved. &middot; <a href="#">Terms</a></p>
+            </div>
+        </div>
       </footer>
 
     </main>

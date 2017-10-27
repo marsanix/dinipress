@@ -54,7 +54,7 @@ if (!function_exists('dinipress_the_time')):
  * Gets a nicely formatted string for the published date.
  */
 	function dinipress_the_time() {
-		$time_string = get_the_time('jS F Y');
+		$time_string = the_time('jS F Y');
 		if (get_the_time('Y-m-d') === date('Y-m-d')) {
 			$time_string = the_time();
 		}

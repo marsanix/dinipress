@@ -25,3 +25,11 @@ if (!file_exists(get_template_directory() . '/class-wp-bootstrap-navwalker.php')
 	// file exists... require it.
 	require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
 }
+
+/* Footer Menu */
+add_action('after_setup_theme', 'dinipress_footer_menu');
+if (!function_exists('dinipress_footer_menu')):
+	function dinipress_footer_menu() {
+		register_nav_menu('footer', __('Footer Menu', 'dinipress'));
+	}
+endif;

@@ -2,20 +2,38 @@
 <article class="blog-post" id="post-<?php the_ID();?>" <?php post_class();?>>
 	<header>
 			<?php the_title('<h2 class="blog-post-title">', '</h2>');?>
-    	<p class="blog-post-meta"><?php the_date()?> by <a href="#"><?php the_author()?></a></p>
-    	<?php dinipress_edit_link(get_the_ID());?>
+			<h6>
+		      	<em>
+		        	<time class="text-muted" datetime="<?php the_time('d-m-Y')?>"><?php dinipress_the_time()?></time>
+            		<span class="text-muted author"><?php (get_the_author())?_e(', By', 'dinipress'):'' ?> <?php the_author()?></span>
+		      	</em>
+          		<?php dinipress_edit_link(get_the_ID())?>
+		    </h6>
+
     </header>
+    <section>
+   
+   	<?php
+	while (have_posts()): the_post();
 
-    <?php
-the_content();
+		the_post_thumbnail('dinipress-single-image');
+		the_content();
 
-wp_link_pages(array(
-	'before' => '<div class="page-links">' . __('Pages:', 'dinipress'),
-	'after' => '</div>',
-));
-?>
+		// If comments are open or we have at least one comment, load up the comment template.
+		if (comments_open() || get_comments_number()):
+			comments_template('', true);
+		endif;
+
+		wp_link_pages(array(
+			'before' => '<div class="page-links">' . __('Pages:', 'dinipress'),
+			'after' => '</div>',
+		));
+	
+	endwhile; // End of the loop.
+	?>
+
+	<?php // comments_template('', true);?>
+  </section>
 </article>
-
-
 
 

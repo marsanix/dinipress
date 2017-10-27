@@ -14,19 +14,7 @@ echo '<h1>' . $this_item->title . '</h1>';
     <div class="<?php if (is_active_sidebar('sidebar-widget-area')): ?>col-sm-8<?php else: ?>col-sm-12<?php endif;?>">
       <div id="content" role="main">
 
-
-		<?php
-while (have_posts()): the_post();
-
-	get_template_part('templates/page/content', 'page');
-
-	// If comments are open or we have at least one comment, load up the comment template.
-	if (comments_open() || get_comments_number()):
-		comments_template();
-	endif;
-
-endwhile; // End of the loop.
-?>
+		<?php get_template_part('templates/page/content', 'page'); ?>
 
       </div><!-- /#content -->
     </div>

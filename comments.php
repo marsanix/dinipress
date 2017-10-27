@@ -32,9 +32,9 @@ endif;
 
 	<?php if (have_comments()): ?>
 
-		<h3>
+		<h4>
 			<?php comments_number();?>
-		</h3>
+		</h4>
 
 		<ul class="media-list list-unstyled">
 			<?php wp_list_comments(array('callback' => 'dinipress_comment'));?>
